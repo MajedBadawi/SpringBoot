@@ -8,6 +8,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.persistence.GenerationType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -15,8 +19,14 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 public class User {
     private int id;
+    @NotNull
+    @Size(min = 2, message = "First Name should have at least 2 characters")
     private String first_name;
+    @NotNull
+    @Size(min = 2, message = "Last Name should have at least 2 characters")
     private String last_name;
+    @Email
+    @NotBlank
     private String emailId;
     private Date createdAt;
     private String createdBy;

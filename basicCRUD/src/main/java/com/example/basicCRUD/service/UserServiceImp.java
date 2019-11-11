@@ -45,8 +45,6 @@ public class UserServiceImp implements UserService {
             new_user.setFirstName(userDetails.getFirstName());
             new_user.setLastName(userDetails.getLastName());
             new_user.setEmailId(userDetails.getEmailId());
-            new_user.setCreatedBy(userDetails.getCreatedBy());
-            new_user.setCreatedAt(userDetails.getCreatedAt());
             new_user.setUpdatedBy(userDetails.getUpdatedBy());
             new_user.setUpdatedAt(new Date());
             userRepository.save(new_user);
